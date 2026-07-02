@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 <h1 align="center">Estrocom</h1>
 
 <p align="center"> <img src="https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white" alt="Astro" /> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" /> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /> <img src="https://img.shields.io/badge/Accessibility-005A9C?style=for-the-badge&logo=w3c&logoColor=white" alt="WCAG" /> </p>
@@ -91,6 +94,7 @@ If you want a custom store built, or help setting up this template, I can handle
 [Contact me](mailto:proshowspeed@gmail.com) to get started.
 
 ---
+>>>>>>> 448a48dc2a08f2c1d26db3dcc9df8fff7341bd70
 
 ## Project Structure
 
@@ -124,4 +128,8 @@ If you want a custom store built, or help setting up this template, I can handle
 | `npm run build`           | Build production site in `./dist/`              |
 | `npm run preview`         | Preview your production build locally           |
 | `npm run astro ...`       | Run Astro CLI commands like `astro add` or `astro check` |
+<<<<<<< HEAD
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+=======
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+>>>>>>> 448a48dc2a08f2c1d26db3dcc9df8fff7341bd70
