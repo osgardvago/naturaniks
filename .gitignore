@@ -20,9 +20,12 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+<<<<<<< HEAD
 
 # wrangler files
 .wrangler
 .dev.vars*
 !.dev.vars.example
 !.env.example
+=======
+>>>>>>> 4b81c5eff9c3b20e4b966df1d717203173d8b9ab
