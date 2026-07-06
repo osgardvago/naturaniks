@@ -54,7 +54,7 @@ const categoryContent = {
 
 const content = categoryContent[type];
 
-const description = `Explore Farmpure's range of ${categoryName} products, pure, natural, and rich in nutrition.`
+const description = `Explore Naturaniks's range of ${categoryName} products, pure, natural, and rich in nutrition.`
 
 /* ============================
    STRUCTURED DATA FOR SEO
@@ -63,34 +63,34 @@ const structuredData = JSON.stringify(
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: `${categoryName} | Farmpure`,
-        url: `https://www.farmpure.net/category/${type}`,
+        name: `${categoryName} | Naturaniks`,
+        url: `https://www.naturaniks.pages.dev/category/${type}`,
         description,
-        inLanguage: "en-IN",
+        inLanguage: "es-MX",
         isPartOf: {
             "@type": "WebSite",
-            name: "Farmpure",
-            url: "https://www.farmpure.net/",
+            name: "Naturaniks",
+            url: "https://www.naturaniks.pages.dev/",
         },
         publisher: {
             "@type": "Organization",
-            name: "Farmpure",
-            url: "https://www.farmpure.net/",
+            name: "Naturaniks",
+            url: "https://www.naturaniks.pages.dev/",
             logo: {
                 "@type": "ImageObject",
-                url: "https://www.farmpure.net/assets/shared/logo.webp",
+                url: "https://www.naturaniks.pages.dev/assets/shared/logo.webp",
             },
             sameAs: [
                 "https://www.facebook.com/people/Farm-Pure/61566574773069/",
                 "https://in.linkedin.com/company/slb-overseas-llp",
-                "https://www.instagram.com/farmpureofficial/",
+                "https://www.instagram.com/Naturaniksofficial/",
             ],
             contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-8700522344",
+                telephone: "+52 333374169",
                 contactType: "Customer Service",
-                areaServed: "IN",
-                availableLanguage: "en",
+                areaServed: "MX",
+                availableLanguage: "es",
             },
         },
         mainEntity: {
@@ -101,12 +101,12 @@ const structuredData = JSON.stringify(
                 .map((item, index) => ({
                     "@type": "ProductCollection",
                     name: item.name,
-                    url: `https://www.farmpure.net/products/${item.slug}`,
+                    url: `https://www.naturaniks.pages.dev/products/${item.slug}`,
                     image: item.image.startsWith("http")
                         ? item.image
-                        : `https://www.farmpure.net${item.image}`,
-                    description: `Explore Farmpure ${item.name}, part of our ${categoryName} range of pure, natural, and traditional Indian superfoods.`,
-                    brand: { "@type": "Brand", name: "Farmpure" },
+                        : `https://www.naturaniks.pages.dev${item.image}`,
+                    description: `Explore Naturaniks ${item.name}, part of our ${categoryName} range of pure, natural, and traditional Indian superfoods.`,
+                    brand: { "@type": "Brand", name: "Naturaniks" },
                     position: index + 1,
                 })),
         },
@@ -116,7 +116,7 @@ const structuredData = JSON.stringify(
 );
 ---
 
-<Layout title=`Farmpure ${categoryName} Products Catalog` description={description}>
+<Layout title=`Naturaniks ${categoryName} Products Catalog` description={description}>
     
     <Fragment slot="head">
         <script type="application/ld+json" set:html={structuredData} />
