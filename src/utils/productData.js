@@ -179,7 +179,7 @@ export const data = [
     slug: "phool-makhana-200g-x-1-pack",
     name: "Phool Makhana 200g x 1 Pack",
     image: "/assets/phool-makhana-200g-x-1-pack/image-product.webp",
-    category: "makhana",
+    category: "gold",
     price: 398,
     others: [
       {
@@ -204,7 +204,7 @@ export const data = [
     slug: "phool-makhana-200g-x-2-packs",
     name: "Phool Makhana 200g x 2 Packs",
     image: "/assets/phool-makhana-200g-x-2-packs/image-product.webp",
-    category: "makhana",
+    category: "gold",
     price: 790,
     others: [
       {
@@ -229,7 +229,7 @@ export const data = [
     slug: "phool-makhana-200g-x-5-packs",
     name: "Phool Makhana 200g x 5 Packs",
     image: "/assets/phool-makhana-200g-x-5-packs/image-product.webp",
-    category: "makhana",
+    category: "gold",
     price: 1835,
     others: [
       {
@@ -254,7 +254,7 @@ export const data = [
     slug: "phool-makhana-200g-x-10-packs",
     name: "Phool Makhana 200g x 10 Packs",
     image: "/assets/phool-makhana-200g-x-10-packs/image-product.webp",
-    category: "makhana",
+    category: "gold",
     price: 3400,
     others: [
       {

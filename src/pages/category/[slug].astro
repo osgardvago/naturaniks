@@ -9,7 +9,7 @@ import FeaturedProducts from "../../components/organisms/FeaturedProducts.astro"
 import Outro from "../../components/organisms/Outro.astro";
 import Footer from "../../components/organisms/Footer.astro";
 import Button from "../../components/atoms/Button.astro";
-import MakhanaBenefits from "../../components/molecules/MakhanaBenefits.astro";
+import GoldBenefits from "../../components/molecules/GoldBenefits.astro";
 import SattuBenefits from "../../components/molecules/SattuBenefits.astro";
 import { data } from "../../utils/productData.js";
 import { colors } from "../../design-system/colors.js";
@@ -19,7 +19,7 @@ import { colors } from "../../design-system/colors.js";
    ============================ */
 export async function getStaticPaths() {
     return [
-        { params: { slug: "makhana" }, props: { type: "makhana" } },
+        { params: { slug: "gold" }, props: { type: "gold" } },
         { params: { slug: "sattu" }, props: { type: "sattu" } },
     ];
 }
@@ -38,11 +38,11 @@ const categoryName = type.charAt(0).toUpperCase() + type.slice(1);
    CATEGORY-SPECIFIC CONTENT
    ============================ */
 const categoryContent = {
-    makhana: {
-        tagline: "The Ancient Snack That's Making a Comeback",
+    gold: {
+        tagline: "Potente anti inflamatorio de origen natural",
         description:
-            "Hand-picked from lotus farms of Bihar, roasted to perfection the traditional way.",
-        badge: "Sustainably Harvested",
+            "Combinación de cúrcuma, ajo, jengibre y un toque de pimienta.",
+        badge: "Efectivo 100%",
     },
     sattu: {
         tagline: "The Protein Secret of India's Strongest Athletes",
@@ -54,7 +54,7 @@ const categoryContent = {
 
 const content = categoryContent[type];
 
-const description = `Explore Naturaniks's range of ${categoryName} products, pure, natural, and rich in nutrition.`
+const description = `Explora Naturaniks ${categoryName} productos naturales ricos en nutricion.`
 
 /* ============================
    STRUCTURED DATA FOR SEO
@@ -116,7 +116,7 @@ const structuredData = JSON.stringify(
 );
 ---
 
-<Layout title=`Naturaniks ${categoryName} Products Catalog` description={description}>
+<Layout title=`Naturaniks ${categoryName}` description={description}>
     
     <Fragment slot="head">
         <script type="application/ld+json" set:html={structuredData} />
@@ -171,7 +171,7 @@ const structuredData = JSON.stringify(
                                 <div class="flex justify-center mt-4">
                                     <a href={`/products/${item.slug}`}>
                                         <Button type="secondary-inverted">
-                                            SEE PRODUCT
+                                            VER PRODUCTO
                                         </Button>
                                     </a>
                                 </div>

@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/organisms/Hero.astro";
 import { colors } from "../design-system/colors.js";
 import Text from "../components/atoms/Text.astro";
-import MakhanaBenefits from "../components/molecules/MakhanaBenefits.astro";
+import GoldBenefits from "../components/molecules/GoldBenefits.astro";
 import SattuBenefits from "../components/molecules/SattuBenefits.astro";
 import FeaturedProducts from "../components/organisms/FeaturedProducts.astro";
 import Footer from "../components/organisms/Footer.astro";
@@ -80,16 +80,16 @@ const structuredData = JSON.stringify(
         },
         {
           "@type": "CollectionPage",
-          "name": "Makhana Category",
-          "description": "Shop our Makhana range, natural, healthy fox nuts packed with protein and antioxidants.",
-          "url": "https://www.naturaniks.pages.dev/category/makhana",
+          "name": "Gold Category",
+          "description": "Compra la mejor combinación de ingredientes naturales anti inflamatorios .",
+          "url": "https://www.naturaniks.pages.dev/category/gold",
           "image": "https://www.naturaniks.pages.dev/assets/exported/makhana.webp"
         }
       ],
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.naturaniks.pages.dev/assets/shared/hero-banner.webp",
-        "caption": "Assortment of traditional Indian superfoods including makhana and sattu"
+        "caption": "Nutraceuticos naturales para sentirse mejor"
       }
     }
   }
@@ -103,8 +103,8 @@ const structuredData = JSON.stringify(
   <Fragment slot="head">
     <!-- Google site verification, remove when you're deploying -->
     <meta
-      name="google-site-verification"
-      content="qfzcIgeEbwcAFbe9ubTMYGoEy7E_owtyBVKSl4Ie_OI"
+      name=""
+      content=""
     />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -117,8 +117,7 @@ const structuredData = JSON.stringify(
        =========================== -->
   <Hero>
     <div
-      class="bg-gradient-to-br from-white to-green-50 overflow-hidden relative"
-    >
+      class="bg-gradient-to-br from-white to-green-50 overflow-hidden relative">
       <div class="mx-auto max-w-7xl px-4 pt-6">
         <div class="grid items-center gap-12 md:grid-cols-2">
           <!-- Left: Hero Text Content -->
@@ -273,8 +272,8 @@ const structuredData = JSON.stringify(
       </div>
 
     </section>
-    <futuredProducts>
-    <!-- Featured products section -->
+
+       <!-- Featured products section -->
     <FeaturedProducts />
 
     <!-- ===========================
@@ -295,13 +294,12 @@ const structuredData = JSON.stringify(
             Sabiduria tradicional, Beneficios modernos
           </Text>
           <Text type="body" color={colors.gray} className="mx-auto max-w-2xl">
-            What our ancestors knew instinctively, science now confirms. These
-            superfoods are nutritional powerhouses
+            El conociemiento actual sigue confirmando el poder contenido en ingredientes naturales tradicionales para mejorar la calidad de vida, la nutricion es la mejor medicina.
           </Text>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-          <MakhanaBenefits />
+          <GoldBenefits />
           <SattuBenefits />
         </div>
       </div>
@@ -322,10 +320,10 @@ const structuredData = JSON.stringify(
             className="mb-3"
             id="why-choose-heading"
           >
-            The Naturaniks Promise
+            Nuestra promesa
           </Text>
           <Text type="body" color={colors.gray} className="mx-auto max-w-2xl">
-            We deliver trust, transparency, and tradition.
+            Entregamos la mejor combinacion de ingredientes naturales para ayudar a sentirse mejor.
           </Text>
         </div>
 

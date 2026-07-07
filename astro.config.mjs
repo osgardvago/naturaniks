@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 import sitemap from "@astrojs/sitemap";
 
-const domain = 'https://estrocom.netlify.app';
+const domain = 'https://naturaniks.pages.dev';
 
 // https://astro.build/config
 export default defineConfig({
