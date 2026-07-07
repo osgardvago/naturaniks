@@ -131,7 +131,7 @@ const structuredData = JSON.stringify(
           value: "0",
           currency: "MXN",
         },
-        shippingDestination: { "@type": "DefinedRegion", addressCountry: "IN" },
+        shippingDestination: { "@type": "DefinedRegion", addressCountry: "MX" },
         deliveryTime: {
           "@type": "ShippingDeliveryTime",
           handlingTime: {
@@ -221,14 +221,14 @@ const features = [
       </div>
 
       <!-- Product Name -->
-      <div class="w-full mb-2">
+      <div class="w-full flex justify-center mb-2">
         <Text type="h1" className="!text-3xl !font-semibold">
           {name}
         </Text>
       </div>
 
       <!-- Product Price with Social Proof -->
-      <div class="w-full mb-4 flex items-center gap-3">
+      <div class="w-full mb-4 flex justify-center gap-3">
         <Text type="body" className="!font-extrabold !text-2xl">
           {`$${price}`}
         </Text>
@@ -251,7 +251,7 @@ const features = [
           <span class="text-green-700">💛 {story.origin}</span>
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
-          {story.process}. {story.promise}.
+          {story.process} {story.promise}
         </p>
       </div>
 
@@ -351,7 +351,7 @@ const features = [
   <!-- -------------------------
        Product Image Gallery
   -------------------------- -->
-  <div class="container grid grid-cols-1 gap-4 pl-2">
+  <div class="container grid lg:grid-cols-2 sm:grid-col-1 gap-4 pl-2">
     <div
       class="bg-cover bg-center bg-no-repeat rounded-2xl aspect-[1.5/1]"
       style={{ backgroundImage: `url(${gallery.first})` }}

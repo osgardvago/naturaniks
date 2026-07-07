@@ -32,7 +32,7 @@ import Text from "../components/atoms/Text.astro";
         <div class="mb-8 flex items-center justify-center gap-2">
           <div class="flex items-center gap-2">
             <div class="h-2 w-2 rounded-full bg-black"></div>
-            <span class="text-sm font-medium text-black">Cart</span>
+            <span class="text-sm font-medium text-black">Carrito</span>
           </div>
           <div class="h-px w-12 bg-gray-300"></div>
           <div class="flex items-center gap-2">
@@ -42,7 +42,7 @@ import Text from "../components/atoms/Text.astro";
           <div class="h-px w-12 bg-gray-300"></div>
           <div class="flex items-center gap-2">
             <div class="h-2 w-2 rounded-full bg-gray-300"></div>
-            <span class="text-sm font-medium text-gray-400">Complete</span>
+            <span class="text-sm font-medium text-gray-400">Completado</span>
           </div>
         </div>
 
@@ -54,9 +54,9 @@ import Text from "../components/atoms/Text.astro";
           <!-- ===== HEADER ===== -->
           <div class="mb-8">
             <Text type="h2" className="!text-2xl !font-bold !leading-tight !tracking-tight">
-              Order Summary
+              Detalles de la orden
             </Text>
-            <p class="mt-2 text-sm text-gray-500">Review your items before checkout</p>
+            <p class="mt-2 text-sm text-gray-500">Revisar articulos antes de checkout</p>
           </div>
 
           <!-- ===== CART ITEMS ===== -->
@@ -67,7 +67,7 @@ import Text from "../components/atoms/Text.astro";
             <svg class="mx-auto h-16 w-16 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
-            <p class="mt-4 text-sm text-gray-500">Your cart is empty</p>
+            <p class="mt-4 text-sm text-gray-500">Tu carrito esta vacío</p>
           </div>
 
           <div class="my-8 border-t border-gray-100"></div>
@@ -76,15 +76,15 @@ import Text from "../components/atoms/Text.astro";
           <div class="space-y-3 mb-6">
             <div class="flex justify-between text-sm">
               <span class="text-gray-600">Subtotal</span>
-              <span id="subtotal" class="font-medium text-gray-900">₹ 0</span>
+              <span id="subtotal" class="font-medium text-gray-900">$ 0</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Shipping</span>
-              <span class="font-medium text-gray-900">Free</span>
+              <span class="text-gray-600">Envío</span>
+              <span class="font-medium text-gray-900">$200</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-gray-600">Tax</span>
-              <span class="font-medium text-gray-900">Calculated at checkout</span>
+              <span class="text-gray-600">Impuesto</span>
+              <span class="font-medium text-gray-900">Calculado en checkout</span>
             </div>
           </div>
 
@@ -96,16 +96,16 @@ import Text from "../components/atoms/Text.astro";
               </Text>
               <div class="text-right">
                 <Text type="h2" id="summary-total" className="!text-3xl !font-bold !text-black">
-                  ₹ 0
+                  $ 0
                 </Text>
-                <p class="text-xs text-gray-500 mt-1">Including all taxes</p>
+                <p class="text-xs text-gray-500 mt-1">Impuestos incluidos</p>
               </div>
             </div>
           </div>
 
           <!-- ===== CHECKOUT BUTTON ===== -->
           <Button id="checkout" width="100%" type="secondary-inverted" className="!py-4 !text-base !font-semibold">
-            PROCEED TO CHECKOUT
+            PROCEDER AL CHECKOUT
           </Button>
 
           <!-- ===== TRUST BADGES ===== -->
@@ -114,14 +114,14 @@ import Text from "../components/atoms/Text.astro";
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
               </svg>
-              <span>Secure checkout</span>
+              <span>Checkout seguro</span>
             </div>
             <div class="flex items-center gap-1.5">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                 <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
               </svg>
-              <span>Free shipping</span>
+              <span>Envio gratis compras mayores $700</span>
             </div>
           </div>
         </div>
@@ -166,8 +166,8 @@ import Text from "../components/atoms/Text.astro";
       emptyState?.classList.remove("hidden");
       const subtotalEl = document.getElementById("subtotal");
       const totalEl = document.getElementById("summary-total");
-      if (subtotalEl) subtotalEl.textContent = "₹ 0";
-      if (totalEl) totalEl.textContent = "₹ 0";
+      if (subtotalEl) subtotalEl.textContent = "$ 0";
+      if (totalEl) totalEl.textContent = "$ 0";
       return;
     }
 
@@ -194,7 +194,7 @@ import Text from "../components/atoms/Text.astro";
           <div class="flex flex-col gap-2 flex-1 pt-1">
             <div>
               <p class="font-semibold text-base leading-tight text-gray-900">${item.name}</p>
-              <p class="font-medium text-sm text-gray-500">₹ ${item.price.toLocaleString()}</p>
+              <p class="font-medium text-sm text-gray-500">$ ${item.price.toLocaleString()}</p>
             </div>
             
             <div class="flex items-center gap-3">
@@ -217,7 +217,7 @@ import Text from "../components/atoms/Text.astro";
             </div>
           </div>
         </div>
-        <p class="font-bold text-base text-gray-900 pt-1">₹ ${(Number(item.price) * currentQuantity).toLocaleString()}</p>
+        <p class="font-bold text-base text-gray-900 pt-1">$ ${(Number(item.price) * currentQuantity).toLocaleString()}</p>
       `;
       
       container.appendChild(itemDiv);
@@ -264,8 +264,8 @@ import Text from "../components/atoms/Text.astro";
     const total = calculateTotal(cartItems);
     const subtotalEl = document.getElementById("subtotal");
     const totalEl = document.getElementById("summary-total");
-    if (subtotalEl) subtotalEl.textContent = `₹ ${total.toLocaleString()}`;
-    if (totalEl) totalEl.textContent = `₹ ${total.toLocaleString()}`;
+    if (subtotalEl) subtotalEl.textContent = `$ ${total.toLocaleString()}`;
+    if (totalEl) totalEl.textContent = `$ ${total.toLocaleString()}`;
   }
 
   /* ---------------------

@@ -177,7 +177,7 @@ export const data = [
   {
     id: 8,
     slug: "phool-makhana-200g-x-1-pack",
-    name: "Phool Makhana 200g x 1 Pack",
+    name: "Gold 60 capsulas",
     image: "/assets/phool-makhana-200g-x-1-pack/image-product.webp",
     category: "gold",
     price: 398,

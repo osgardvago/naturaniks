@@ -154,7 +154,7 @@ export function renderCart(): void {
     />
     <div class="cart-item-details">
       <strong>${item.name}</strong>
-      <span>₹ ${item.price}</span>
+      <span>$ ${item.price}</span>
     </div>
   </div>
   <div class="counter-wrapper" data-index="${index}">
@@ -168,7 +168,7 @@ export function renderCart(): void {
 
   const total = calculateTotal(cartItems);
   if (cartTotal) {
-    cartTotal.textContent = `₹${total.toLocaleString()}`;
+    cartTotal.textContent = `$${total.toLocaleString()}`;
   }
 
   document.querySelectorAll<HTMLElement>(".counter-wrapper").forEach((wrapper) => {
