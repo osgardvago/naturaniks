@@ -1,0 +1,79 @@
+---
+// src/components/molecules/Modal2.astro
+interface Props {
+  id: string;
+  openButtonText: string;
+}
+
+const { id, openButtonText } = Astro.props;
+---
+
+<!-- Trigger Button (Styled with Tailwind) -->
+<button
+  data-open-modal={id}
+  class="px-4 mx-2 py-2 bg-amber-400 text-white font-medium rounded-lg hover:bg-amber-200 transition shadow-sm"
+>
+  {openButtonText}
+</button>
+
+<!-- Native Dialog Wrapper (Backdrop styled using Tailwind's backdrop: modifier) -->
+<dialog
+  id={id}
+  class="mx-auto my-auto rounded-xl p-0 max-w-3xl w-full h-1/2 shadow-2xl border-slate-100 bg-grey backdrop:bg-amber-900/30 backdrop:backdrop-blur-sm"
+>
+  <div class="p-6">
+    <!-- Header/Close action -->
+    <header class="flex justify-between items-center border-b border-slate-200  p-4 mb-4 rounded-lg">
+      <div class="text-lg font-semibold text-slate-900 flex inline">
+        <slot name="title">Opiniones</slot><h2 slot="header" class="text-yellow-500 ml-2">★★★★★</h2>
+      </div>
+      <button
+        data-close-modal={id}
+        aria-label="Close modal"
+        class="text-slate-400 hover:text-slate-600 text-2xl font-light p-1 transition leading-none"
+      >
+        &times;
+      </button>
+    </header>
+
+    <!-- Main Dynamic Content Slot -->
+    <main class="text-slate-600 leading-relaxed">
+      <slot />
+    </main>
+  </div>
+</dialog>
+
+<script>
+  function setupModals() {
+    const openButtons = document.querySelectorAll('[data-open-modal]');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
+
+    openButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modalId = button.getAttribute('data-open-modal');
+        const dialog = document.getElementById(modalId) as HTMLDialogElement;
+        if (dialog) dialog.showModal();
+      });
+    });
+
+    closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modalId = button.getAttribute('data-close-modal');
+        const dialog = document.getElementById(modalId) as HTMLDialogElement;
+        if (dialog) dialog.close();
+      });
+    });
+
+    const dialogs = document.querySelectorAll('dialog');
+    dialogs.forEach(dialog => {
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          (dialog as HTMLDialogElement).close();
+        }
+      });
+    });
+  }
+
+  setupModals();
+  document.addEventListener('astro:after-swap', setupModals);
+</script>

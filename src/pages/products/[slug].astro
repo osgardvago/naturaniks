@@ -7,6 +7,7 @@ import Text from "../../components/atoms/Text.astro";
 import FeaturedProducts from "../../components/organisms/FeaturedProducts.astro";
 import GoldBenefits from "../../components/molecules/GoldBenefits.astro";
 import SattuBenefits from "../../components/molecules/SattuBenefits.astro";
+import Modal from "../../components/molecules/Modal2.astro";
 import Outro from "../../components/organisms/Outro.astro";
 import Footer from "../../components/organisms/Footer.astro";
 import Button from "../../components/atoms/Button.astro";
@@ -45,7 +46,7 @@ const categoryStory = {
     whyPure:
       " Todos los dias",
     perfectFor:
-      " Suplementar la alimentación diaria con componentes dificles de encontrar en otros alimentos",
+      " Suplementar la alimentación diaria con componentes dificiles de encontrar en la comida regular",
   },
   sattu: {
     origin: "Sourced from premium lotus fields in Bihar and UP",
@@ -86,18 +87,38 @@ const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
 /* -------------------------
    Category-specific testimonials
 -------------------------- */
-const categoryTestimonial =
-  category === "sattu"
-    ? {
-        review:
-          "Nice product with some different taste and smell... A must have product in your home...",
-        author: "Rajendra, Mumbai",
-      }
-    : {
-        review:
-          "Very fresh and crunchy. No smell as I have found in some other varieties...",
-        author: "Madhu S.",
-      };
+// Tu variable de categoría actual (ej. de Astro.props o URL)
+// const { category } = Astro.props;
+
+// 1. Definimos las listas de testimonios como arreglos
+const goldTestimonials = [
+  {
+    review: "Nice product... A must have product in your home...",
+    author: "Golden, goldie",
+  },
+  {
+    review: "Excellent quality and very authentic. Highly recommended!",
+    author: "Goldilocks, Goldan",
+  },
+  {
+    review: "Yes it does the job,  recommended and aproved!",
+    author: "Oro, Goldan",
+  }
+];
+
+const protTestimonials = [
+  {
+    review: "Very fresh and crunchy. No smell as I have found in some other varieties...",
+    author: "Madhu Saas.",
+  },
+  {
+    review: "The packaging was great and the product feels premium.",
+    author: "Sunita, Bangalore",
+  }
+];
+
+// 2. Asignamos el arreglo correspondiente según la categoría
+const testimonialsList = category === "gold" ? goldTestimonials : protTestimonials;
 
 /* -------------------------
    Structured Data for SEO
@@ -169,9 +190,9 @@ const structuredData = JSON.stringify(
         author: { "@type": "Person", name: "Amazon Customer" },
         publisher: {
           "@type": "Organization",
-          name: categoryTestimonial.author,
+          name: goldTestimonials.author,
         },
-        reviewBody: categoryTestimonial.review,
+        reviewBody: goldTestimonials.review,
       },
     ],
   },
@@ -238,28 +259,68 @@ const features = [
             >{category === "gold" ? "4.6" : "4.7"}</span
           >
           <span class="text-gray-500"
-            >({category === "gold" ? "587" : "534"} reviews)</span
+            >({category === "gold" ? "587" : "534"})</span
           >
+
+<!--     Comments Modal    -->
+          <span class="">
+            <Modal id="opinion-modal" openButtonText="Opiniones">
+              <h2 slot="header" class="text-yellow-500">★★★★★</h2>
+                <div class="px-5 relative w-full max-w-4xl mx-auto">
+
+                  <!-- Carousel Wrapper -->
+                    <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full max-w-2xl mx-auto border rounded-xl shadow-sm" id="carousel">
+
+                      {testimonialsList.map((item) => (
+                        /* Cada tarjeta individual se genera aquí */
+                        <div class="min-w-full py-10 px-10 snap-center shrink-0 flex flex-col justify-center bg-white">
+                          <Text type="body" className="!text-lg !italic mb-4 text-gray-700">
+                            "{item.review}"
+                          </Text>
+                          <Text type="body" className="!font-semibold text-gray-900">
+                            — {item.author}
+                          </Text>
+                        </div>
+                      ))}
+
+                    </div>
+
+                  <!-- Navigation Buttons (Optional JavaScript Controller) -->
+                  <button onclick="prevSlide()" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
+                    ❮
+                  </button>
+
+                  <button onclick="nextSlide()" class= "absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
+                    ❯
+                  </button>
+
+                </div>
+                 <!-- Tu script corregido -->
+
+            </Modal>
+
+          </span>
         </div>
       </div>
 
+
       <!-- Story Callout -->
       <div
-        class="mb-6 bg-amber-100 rounded-xl p-4"
+        class="mb-6  rounded-xl p-4"
       >
         <p class="text-sm font-medium text-gray-800 mb-2">
-          <span class="text-green-700">💛 {story.origin}</span>
+          <span class="text-green-700"> {story.origin}</span>
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
-          {story.process} {story.promise}
+          {story.process} {story.promise} 💛
         </p>
       </div>
 
       <!-- Quantity Selector + Add to Cart + Buy Now -->
-      <div class="flex flex-col gap-3">
+      <div class="flex inline justify-center gap-3">
         <div class="flex gap-3">
           <label for="product-quantity" class="sr-only">Cantidad</label>
-          <Input id="product-quantity" type="counter" value={1} class="w-24" />
+          <Input id="product-quantity" type="counter" value={1} class="w-24"/>
           <Button
             id="add-to-cart-btn"
             type="secondary-inverted"
@@ -299,11 +360,11 @@ const features = [
           </svg>
           Comprar ahora
         </Button>
-        <p class="text-sm text-gray-600 text-center mt-1">
-          ✓ Envio a domicilio • ✓ Metodo de pago seguro
-        </p>
-      </div>
 
+      </div>
+      <p class="text-sm text-gray-600 text-center mt-5">
+          ✓ Envio a domicilio &ensp; • &ensp; ✓ Metodo de pago seguro
+        </p>
       <div
         id="cart-status"
         class="sr-only"
@@ -315,7 +376,7 @@ const features = [
 
       <!-- Product Description with Story -->
       <div class="w-full mt-6 mb-8 space-y-4">
-        <Text type="body" className="leading-relaxed">{description}</Text>
+        <Text type="body" className="leading-relaxed"></Text>
         <div class="bg-white rounded-lg p-4 border border-gray-200">
           <p class="text-sm text-gray-700 leading-relaxed mb-3">
             <strong class="text-gray-900">Consumo recomendado: </strong>
@@ -369,35 +430,7 @@ const features = [
     </div>
   </div>
 
-  <!-- -------------------------
-       The Story Behind Your Product
-  -------------------------- -->
-  <div class="container pl-2 mb-12">
-    <div
-      class="bg-gradient-to-br from-green-50 to-amber-50 rounded-2xl p-8 border border-green-100"
-    >
-      <div class="max-w-3xl">
-        <Text type="h2" className="!text-2xl !font-bold mb-4 text-gray-900">
-          Es bueno para nuestra familia, es bueno para ti.
-        </Text>
-        <div class="space-y-4 text-gray-700 leading-relaxed">
-          <p>
-            <strong>Nuestra promesa</strong> Entregarte un producto original probado extensamente por nuestra familia.
-          </p>
-          <p>
-            El cuidado mutuo y el autocuidado personal son la razón de ser de nuestros esfuerzos, cada producto que ofrecemos lo hacemos inicialmente para nosotros, probamos sus beneficios y luego lo compartimos.
-          </p>
-          <div class="flex items-center justify-center">
-            <p class="font-medium text-gray-900 text-xl">
-              💛
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- -------------------------
+    <!-- -------------------------
        Benefits Section
   -------------------------- -->
   <div class="container flex flex-col gap-4 pl-2">
@@ -412,25 +445,66 @@ const features = [
   </div>
 
   <!-- -------------------------
+       The Story Behind Your Product
+  -------------------------- -->
+  <div class="container pl-2 mb-12">
+    <div
+      class="bg-gradient-to-br from-green-50 to-amber-50 rounded-2xl p-8 border border-green-100"
+    >
+      <div class="max-w-3xl">
+        <Text type="h2" className="!text-2xl !font-bold mb-4 text-gray-900">
+          Es bueno para nuestra familia, es bueno para ti.
+        </Text>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <p>
+            <strong>Nuestra promesa </strong> es entregarte un producto original probado extensamente por nuestra familia, para tu beneficio.
+          </p>
+          <p>
+            El cuidado mutuo y el autocuidado personal son la razón de ser de nuestros esfuerzos, cada producto que ofrecemos lo hacemos inicialmente para nosotros, probamos sus beneficios y luego lo compartimos.
+          </p>
+          <div class="flex items-center justify-center">
+            <p class=" text-xl">
+              💛
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- -------------------------
        Testimonial Section
   -------------------------- -->
-  <div class="container p-2 my-12">
-    <div class="w-full max-w-2xl mx-auto text-center">
-      <Text type="h2" className="!text-3xl !font-semibold mb-6">
-        Opinión de nuestros clientes
-      </Text>
-      <blockquote
-        class="bg-gradient-to-br from-green-50 to-white p-8 rounded-xl shadow-md border border-green-100"
-      >
-        <div class="text-yellow-500 text-2xl mb-3">★★★★★</div>
-        <Text type="body" className="!text-lg !italic mb-4">
-          "{categoryTestimonial.review}"
-        </Text>
-        <Text type="body" className="!font-semibold text-gray-900">
-          — {categoryTestimonial.author}
-        </Text>
-      </blockquote>
-    </div>
+  <div class="px-5 relative w-full max-w-4xl mx-auto">
+
+      <!-- Carousel Wrapper -->
+        <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full max-w-2xl mx-auto border rounded-xl shadow-sm" id="carousel2">
+
+          {testimonialsList.map((item) => (
+            /* Cada tarjeta individual se genera aquí */
+            <div class="min-w-full py-10 px-10 snap-center shrink-0 flex flex-col justify-center bg-white">
+              <Text type="body" className="!text-lg !italic mb-4 text-gray-700">
+                "{item.review}"
+              </Text>
+              <Text type="body" className="!font-semibold text-gray-900">
+                — {item.author}
+              </Text>
+            </div>
+          ))}
+                  <!-- Navigation Buttons (Optional JavaScript Controller) -->
+            <button onclick="prevSlide2()" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
+              ❮
+            </button>
+
+            <button onclick="nextSlide2()" class= "absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
+              ❯
+            </button>
+        </div>
+
+
+
   </div>
 
   <!-- -------------------------
@@ -438,7 +512,7 @@ const features = [
   -------------------------- -->
   <div class="container p-2">
     <Text type="h2" className="!text-3xl !font-semibold text-center mt-4">
-      También podria gustarte
+      También podria interesarte
     </Text>
   </div>
 
@@ -551,7 +625,7 @@ const features = [
       }
 
       const originalText = addToCartBtn.textContent;
-      addToCartBtn.textContent = "ADDED!";
+      addToCartBtn.textContent = "AGREGADO!";
       addToCartBtn.style.backgroundColor = "#4CAF50";
 
       setTimeout(() => {
@@ -573,7 +647,7 @@ const features = [
       addItem({ name, image, price: price.toString() }, quantity);
 
       if (cartStatus) {
-        cartStatus.textContent = `Added ${quantity} ${
+        cartStatus.textContent = `Agregado ${quantity} ${
           quantity > 1 ? "items" : "item"
         } to cart. Redirecting to checkout...`;
       }
@@ -581,4 +655,50 @@ const features = [
       window.location.href = "/checkout";
     });
   }
+</script>
+<script>
+    // Ejecuta el código una vez que el HTML esté completamente cargado
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = document.getElementById('carousel');
+
+      // Definimos las funciones de forma global para que el 'onclick' del HTML las encuentre
+      window.nextSlide = function() {
+        if (carousel) {
+          const slideWidth = carousel.clientWidth; // Captura el ancho exacto actual
+          carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
+
+        } else {
+          console.error("No se encontró el elemento #carousel");
+        }
+      }
+
+      window.prevSlide = function() {
+        if (carousel) {
+          const slideWidth = carousel.clientWidth; // Captura el ancho exacto actual
+          carousel.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+
+        } else {
+          console.error("No se encontró el elemento #carousel");
+        }
+      }
+      window.nextSlide2 = function() {
+        if (carousel2) {
+          const slideWidth = carousel2.clientWidth; // Captura el ancho exacto actual
+          carousel2.scrollBy({ left: slideWidth, behavior: 'smooth' });
+
+        } else {
+          console.error("No se encontró el elemento #carousel");
+        }
+      }
+
+      window.prevSlide2 = function() {
+        if (carousel2) {
+          const slideWidth = carousel2.clientWidth; // Captura el ancho exacto actual
+          carousel2.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+
+        } else {
+          console.error("No se encontró el elemento #carousel");
+        }
+      }
+    });
 </script>
