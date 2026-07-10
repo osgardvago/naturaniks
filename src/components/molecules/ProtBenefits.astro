@@ -1,7 +1,7 @@
 ---
 import Text from "../atoms/Text.astro";
 import { colors } from "../../design-system/colors.js";
-import sattu from "../../../public/assets/exported/sattu.webp";
+import prot from "../../../public/assets/exported/prot.webp";
 import { Image } from "astro:assets";
 import Button from "../atoms/Button.astro";
 import ListItem from "./ListItem.astro";
@@ -15,43 +15,43 @@ import ListItem from "./ListItem.astro";
             class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mr-4"
         >
             <Image
-                src={sattu}
-                alt="Sattu"
+                src={prot}
+                alt="Prot"
                 width={500}
                 height={500}
                 class="object-cover"
             />
         </div>
-        <Text type="h3" color={colors.dark}>Sattu Benefits</Text>
+        <Text type="h3" color={colors.dark}>Beneficios Prot</Text>
     </div>
 
     <ul class="space-y-4">
         <ListItem
-            title="Complete Protein"
-            desc="Contains all essential amino acids for optimal nutrition"
+            title="Completo en proteinas"
+            desc="Contiene todos los aminoacidos necesarios para la regeneración celular"
             color="amber"
         />
         <ListItem
-            title="Natural Coolant"
-            desc="Keeps body cool and hydrated, perfect for summers"
+            title="Fuente de balance de energía"
+            desc="Alimenta, regenera y energiza todas las celulas de tu cuerpo"
             color="amber"
         />
         <ListItem
-            title="Digestive Health"
-            desc="High in fiber, promotes gut health and regularity"
+            title="Salud integral"
+            desc="Aumento y/o conservación de músculos, ayuda a recobrarse mas rápido de enfermedades y lesiones"
             color="amber"
         />
         <ListItem
             title="Energy Booster"
-            desc="Sustained energy release, ideal for active lifestyles"
+            desc="Energia sostenida para todas tus actividades"
             color="amber"
         />
     </ul>
 
     <div class="mt-6">
-        <a href="/category/sattu">
+        <a href="/category/prot">
             <Button variant="secondary" className="w-full">
-                Explore Sattu →
+                Explorar Prot →
             </Button>
         </a>
     </div>

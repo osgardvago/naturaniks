@@ -160,9 +160,12 @@ export function renderCart(): void {
   <div class="counter-wrapper" data-index="${index}">
     <button class="counter-btn decrease">-</button>
     <span class="counter-value">${item.quantity || 1}</span>
-    <button class="counter-btn increase">+</button>
+    <button class="counter-btn increase" >+</button>
   </div>
 `;
+
+
+
     cartItemsContainer.appendChild(itemDiv);
   });
 
@@ -223,3 +226,4 @@ export function getItemCount(): number {
 export function getTotal(): number {
   return calculateTotal(getCartItems());
 }
+

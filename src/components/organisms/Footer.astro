@@ -3,15 +3,15 @@ import Text from "../atoms/Text.astro";
 import { colors } from "../../design-system/colors";
 ---
 
-<footer class="footer py-9 text-white">
+<footer class="footer py-9 text-white bg-gradient-to-br from-green-300 to-yellow-300">
   <nav class="container flex flex-col justify-around gap-8 pt-6 pb-6 uppercase">
     <div class="flex justify-around gap-8 mt-4 mb-4">
       <a href="/"><Text type="subTitle" color="#f1f1f1">Inicio</Text></a>
       <a href="/category/gold"
         ><Text type="subTitle" color="#f1f1f1">Gold</Text></a
       >
-      <a href="/category/sattu"
-        ><Text type="subTitle" color="#f1f1f1">Sattu</Text></a
+      <a href="/category/prot"
+        ><Text type="subTitle" color="#f1f1f1">Prot</Text></a
       >
     </div>
   </nav>
@@ -86,8 +86,3 @@ import { colors } from "../../design-system/colors";
     </div>
   </div>
 </footer>
-<style>
-  .footer {
-    background-color: var(--night);
-  }
-</style>

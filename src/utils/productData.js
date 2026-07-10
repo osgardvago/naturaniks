@@ -2,9 +2,9 @@ export const data = [
   {
     id: 1,
     slug: "roasted-chana-sattu-powder-450g-x-1-pack",
-    name: "Chana Sattu Powder 450g x 1 Pack",
+    name: "Prot 70 capsulas",
     image: "/assets/roasted-chana-sattu-powder-450g-x-1-pack/image-product.webp",
-    category: "sattu",
+    category: "Prot",
     price: 229,
     others: [
       {
@@ -29,7 +29,7 @@ export const data = [
     slug: "roasted-chana-sattu-powder-450g-x-2-packs",
     name: "Chana Sattu Powder 450g x 2 Packs",
     image: "/assets/roasted-chana-sattu-powder-450g-x-2-packs/image-product.webp",
-    category: "sattu",
+    category: "prot",
     price: 430,
     others: [
       {
@@ -54,7 +54,7 @@ export const data = [
     slug: "roasted-chana-sattu-powder-450g-x-5-packs",
     name: "Chana Sattu Powder 450g x 5 Packs",
     image: "/assets/roasted-chana-sattu-powder-450g-x-5-packs/image-product.webp",
-    category: "sattu",
+    category: "prot",
     price: 1050,
     others: [
       {
@@ -79,7 +79,7 @@ export const data = [
     slug: "roasted-chana-sattu-powder-450g-x-10-packs",
     name: "Chana Sattu Powder 450g x 10 Packs",
     image: "/assets/roasted-chana-sattu-powder-450g-x-10-packs/image-product.webp",
-    category: "sattu",
+    category: "prot",
     price: 2050,
     others: [
       {
@@ -104,7 +104,7 @@ export const data = [
     slug: "roasted-chana-sattu-powder-950g-x-1-pack",
     name: "Chana Sattu Powder 950g x 1 Pack",
     image: "/assets/roasted-chana-sattu-powder-950g-x-1-pack/image-product.webp",
-    category: "sattu",
+    category: "prot",
     price: 299,
     others: [
       {
@@ -129,7 +129,7 @@ export const data = [
     slug: "roasted-chana-sattu-powder-950g-x-2-packs",
     name: "Chana Sattu Powder 950g x 2 Packs",
     image: "/assets/roasted-chana-sattu-powder-950g-x-2-packs/image-product.webp",
-    category: "sattu",
+    category: "prot",
     price: 626,
     others: [
       {
@@ -154,7 +154,7 @@ export const data = [
     slug: "roasted-chana-sattu-powder-950g-x-5-packs",
     name: "Chana Sattu Powder 950g x 5 Packs",
     image: "/assets/roasted-chana-sattu-powder-950g-x-5-packs/image-product.webp",
-    category: "sattu",
+    category: "prot",
     price: 1525,
     others: [
       {

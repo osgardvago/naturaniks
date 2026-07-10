@@ -10,7 +10,7 @@ import Outro from "../../components/organisms/Outro.astro";
 import Footer from "../../components/organisms/Footer.astro";
 import Button from "../../components/atoms/Button.astro";
 import GoldBenefits from "../../components/molecules/GoldBenefits.astro";
-import SattuBenefits from "../../components/molecules/SattuBenefits.astro";
+import ProtBenefits from "../../components/molecules/ProtBenefits.astro";
 import { data } from "../../utils/productData.js";
 import { colors } from "../../design-system/colors.js";
 
@@ -20,7 +20,7 @@ import { colors } from "../../design-system/colors.js";
 export async function getStaticPaths() {
     return [
         { params: { slug: "gold" }, props: { type: "gold" } },
-        { params: { slug: "sattu" }, props: { type: "sattu" } },
+        { params: { slug: "prot" }, props: { type: "prot" } },
     ];
 }
 
@@ -44,11 +44,10 @@ const categoryContent = {
             "Combinación de cúrcuma, ajo, jengibre y un toque de pimienta.",
         badge: "Efectivo 100%",
     },
-    sattu: {
-        tagline: "The Protein Secret of India's Strongest Athletes",
+    prot: {
+        tagline: "Poderosa Combinación de proteinas de origen natural",
         description:
-            "Premium roasted gram flour, packed with natural protein and nutrients.",
-        badge: "💪 Natural Protein Source",
+            "Mezcla única de alga espirulina, albumina de huevo y levadura de cerveza 💪 Fuentes naturales de proteinas y aminoacidos de alta calidad ",
     },
 };
 
@@ -190,10 +189,10 @@ const structuredData = JSON.stringify(
                     >
                         <div class="text-3xl mb-2">🔬</div>
                         <div class="text-sm font-semibold text-gray-900">
-                            Lab Tested
+                            Respaldado por investigación
                         </div>
                         <div class="text-xs text-gray-600 mt-1">
-                            Quality Assured
+                            Conocimientos actuales
                         </div>
                     </div>
                     <div
@@ -201,21 +200,10 @@ const structuredData = JSON.stringify(
                     >
                         <div class="text-3xl mb-2">🤝</div>
                         <div class="text-sm font-semibold text-gray-900">
-                            Farm Direct
+                            Precios razonables
                         </div>
                         <div class="text-xs text-gray-600 mt-1">
-                            No Middlemen
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white rounded-xl p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)]"
-                    >
-                        <div class="text-3xl mb-2">🔒</div>
-                        <div class="text-sm font-semibold text-gray-900">
-                            100% Pure
-                        </div>
-                        <div class="text-xs text-gray-600 mt-1">
-                            Zero Additives
+                            Comercio justo
                         </div>
                     </div>
                     <div
@@ -223,10 +211,21 @@ const structuredData = JSON.stringify(
                     >
                         <div class="text-3xl mb-2">🌱</div>
                         <div class="text-sm font-semibold text-gray-900">
-                            Sustainable
+                            100% Natural
                         </div>
                         <div class="text-xs text-gray-600 mt-1">
-                            Eco-Friendly
+                            Cero aditivos
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-xl p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)]"
+                    >
+                        <div class="text-3xl mb-2">🛡️</div>
+                        <div class="text-sm font-semibold text-gray-900">
+                            Seguro
+                        </div>
+                        <div class="text-xs text-gray-600 mt-1">
+                            Sin riesgos ni efectos secundarios
                         </div>
                     </div>
                 </div>
@@ -246,24 +245,23 @@ const structuredData = JSON.stringify(
                         className="mb-3"
                         id="benefits-heading"
                     >
-                        Health Benefits of {categoryName}
+                        Ventajas de consumir {categoryName}
                     </Text>
                     <Text
                         type="body"
                         color={colors.gray}
                         className="mx-auto max-w-2xl"
                     >
-                        Backed by centuries of tradition and modern nutritional
-                        science
+                        Respaldado por la tradición y el conocimiento nutricional actual.
                     </Text>
                 </div>
 
                 <div class="flex justify-center">
                     {
-                        type === "makhana" ? (
-                            <MakhanaBenefits />
+                        type === "gold" ? (
+                            <GoldBenefits />
                         ) : (
-                            <SattuBenefits />
+                            <ProtBenefits />
                         )
                     }
                 </div>

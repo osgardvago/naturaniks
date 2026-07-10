@@ -7,7 +7,7 @@ import Hero from "../components/organisms/Hero.astro";
 import { colors } from "../design-system/colors.js";
 import Text from "../components/atoms/Text.astro";
 import GoldBenefits from "../components/molecules/GoldBenefits.astro";
-import SattuBenefits from "../components/molecules/SattuBenefits.astro";
+import ProtBenefits from "../components/molecules/ProtBenefits.astro";
 import FeaturedProducts from "../components/organisms/FeaturedProducts.astro";
 import Footer from "../components/organisms/Footer.astro";
 import { Image } from "astro:assets";
@@ -26,8 +26,7 @@ const promises = [
     icon: "🧂",
     title: "Nada agregado, Nada removido",
     text: `Sin conservantes ni colorantes artificiales. Con la misma pureza que
-            tu bisabuela aprobaría, porque para entender la comida de verdad no hace falta
-            ser licenciado en química.`,
+            tu bisabuela aprobaría.`,
   },
   {
     icon: "🛡️",
@@ -73,17 +72,17 @@ const structuredData = JSON.stringify(
       "about": [
         {
           "@type": "CollectionPage",
-          "name": "Sattu Category",
+          "name": "Prot Category",
           "description": "Explora los productos Naturaniks",
-          "url": "https://www.naturaniks.pages.dev/category/sattu",
-          "image": "https://www.naturaniks.pages.dev/assets/exported/sattu.webp"
+          "url": "https://www.naturaniks.pages.dev/category/prot",
+          "image": "https://www.naturaniks.pages.dev/assets/exported/prot.webp"
         },
         {
           "@type": "CollectionPage",
           "name": "Gold Category",
           "description": "Compra la mejor combinación de ingredientes naturales anti inflamatorios .",
           "url": "https://www.naturaniks.pages.dev/category/gold",
-          "image": "https://www.naturaniks.pages.dev/assets/exported/makhana.webp"
+          "image": "https://www.naturaniks.pages.dev/assets/exported/gold.webp"
         }
       ],
       "primaryImageOfPage": {
@@ -104,7 +103,7 @@ const structuredData = JSON.stringify(
     <!-- Google site verification, remove when you're deploying -->
     <meta
       name="Naturaniks suplementos alimenticios naturales"
-      content="Tienda online de suplementos alimenticios naturales: Naturaniks Gold (antiinflamatorio a base de curcuma, genjibre y ajo) Naturaniks Prot (agregado de alga espirulina, albumina de huevo y levadura de cerveza rico en proteinas)"
+      content="Tienda online de suplementos alimenticios naturales: Naturaniks Gold (antiinflamatorio a base de curcuma, jengibre y ajo) Naturaniks Prot (agregado de alga espirulina, albumina de huevo y levadura de cerveza rico en proteinas)"
     />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -137,7 +136,7 @@ const structuredData = JSON.stringify(
             >
               Herencia, tradición y sabiduria global,<br />
               <span
-                class="bg-gradient-to-r from-green-300 to-amber-300 bg-clip-text text-transparent"
+                class="bg-gradient-to-br from-yellow-300 to-green-300 bg-clip-text text-transparent"
               >
                 para tu salud
               </span>
@@ -150,10 +149,6 @@ const structuredData = JSON.stringify(
                 className="max-w-xl text-lg leading-relaxed md:text-xl"
               >
                 Por muchas generaciones, hemos sabido que la naturaleza nos provee de todo lo que necesitamos. En <strong>Naturaniks</strong>, creemos en recuperar esa sabiduría ancestral y complementarla con el conocimiento científico actual para ofrecerte productos elaborados con lo mejor de la naturaleza, de forma práctica, efectiva y perfectamente adaptada a nuestro estilo de vida moderno.
-
-
-
-
               </Text>
             </div>
 
@@ -201,7 +196,7 @@ const structuredData = JSON.stringify(
               <div class="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Comenzó con una pregunta: <em
-                    class="text-green-700 italic font-medium"
+                    class="text-green-400 italic text-lg font-bold"
                     >¿Como ayudar al cuerpo a controlar la inflamación usando solo productos naturales?</em
                   >
                 </p>
@@ -220,7 +215,7 @@ const structuredData = JSON.stringify(
           </div>
           <div class="order-1 md:order-2">
             <div
-              class="bg-gradient-to-br from-green-50 to-amber-200 rounded-2xl p-8 shadow-lg"
+              class="bg-gradient-to-br from-green-100 to-yellow-200 rounded-2xl p-8 shadow-lg"
             >
               <div class="grid grid-cols-2 gap-4">
                 <div class="bg-white rounded-xl p-6 text-center shadow-sm">
@@ -280,27 +275,22 @@ const structuredData = JSON.stringify(
        BENEFITS SECTION
        =========================== -->
     <section
-      class="bg-gradient-to-b from-white to-amber-100 px-4 py-16"
+      class="bg-gradient-to-bl from-green-300 to-yellow-200 px-4 py-16"
       aria-labelledby="benefits-heading"
     >
       <div class="mx-auto max-w-6xl">
         <div class="mb-12 text-center">
-          <Text
-            type="h2"
-            color={colors.dark}
-            className="mb-3"
-            id="benefits-heading"
-          >
+          <p class="text-5xl text-white font-bold pb-10">
             Sabiduria tradicional, Beneficios modernos
-          </Text>
+          </p>
           <Text type="body" color={colors.gray} className="mx-auto max-w-2xl">
-            El conociemiento actual sigue confirmando el poder contenido en ingredientes naturales tradicionales para mejorar la calidad de vida, la nutricion es la mejor medicina.
+            El conociemiento actual sigue confirmando el poder contenido en los ingredientes naturales tradicionales con efectos que  mejoran la calidad de vida, <strong>la nutricion es la mejor medicina.</strong>
           </Text>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
           <GoldBenefits />
-          <SattuBenefits />
+          <ProtBenefits />
         </div>
       </div>
     </section>

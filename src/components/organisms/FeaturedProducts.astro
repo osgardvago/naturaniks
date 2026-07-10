@@ -1,18 +1,18 @@
 ---
 import Button from "../../components/atoms/Button.astro";
-import makhana from "../../../public/assets/exported/makhana.webp";
-import sattu from "../../../public/assets/exported/sattu.webp";
+import gold from "../../../public/assets/exported/gold.webp";
+import prot from "../../../public/assets/exported/prot.webp";
 import FeaturedProductCard from "../molecules/FeaturedProductCard.astro";
 ---
 
-<section aria-labelledby="featured-products" class="">
+<section class="bg-gradient-to-br from-yellow-200 to-green-300" aria-labelledby="featured-products" >
   <h2 id="featured-products" class="sr-only">Productos destacados</h2>
-  <div class="container grid grid-cols-1 place-items-cente">
-    <FeaturedProductCard image={makhana} imageAlt="gold" title="Gold" link="/category/gold">
+  <div class="container grid grid-cols-2 place-items-center">
+    <FeaturedProductCard image={gold} imageAlt="gold" title="Gold" link="/category/gold">
       <a class="p-2 text-xl font-semibold mb-2" href="/category/gold"><Button>Comprar →</Button></a>
     </FeaturedProductCard>
-    <FeaturedProductCard image={sattu} imageAlt="sattu" title="Sattu" link="/category/sattu">
-      <a class="p-2 text-xl font-semibold mb-2" href="/category/sattu"><Button>Shop →</Button></a>
+    <FeaturedProductCard image={prot} imageAlt="prot" title="Prot" link="/category/prot">
+      <a class="p-2 text-xl font-semibold mb-2" href="/category/prot"><Button>Comprar →</Button></a>
     </FeaturedProductCard>
   </div>
 </section>

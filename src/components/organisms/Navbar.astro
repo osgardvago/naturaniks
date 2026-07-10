@@ -1,25 +1,25 @@
 ---
 import { Image } from "astro:assets";
 import Text from "../atoms/Text.astro";
-import logo from "../../../public/assets/exported/icon-logo.webp";
+import logo from "../../../public/assets/exported/icon-logo.png";
 import Modal from "../molecules/Modal.astro";
 import Button from "../atoms/Button.astro";
-import cart from "../../../public/assets/checkout/cart.png"
+import cart from "../../../public/assets/checkout/cart.png";
 ---
 <!--Boton Home-->
-<div class="sticky top-0 z-10 w-full bg-gray-100 min-h-fit">
+<div class="sticky top-0 z-10 w-full bg-gradient-to-br from-yellow-200 to-green-200 min-h-fit">
   <nav
-    class="top-nav relative mx-auto flex w-[85%] min-w-[325px] max-h-[10vh] items-center justify-between /-/border-b border-black/20 py-[clamp(5px,1vw,10px)]"
+    class="top-nav relative mx-auto flex w-[85%] min-w-[325px] max-h-[12vh] items-center justify-between /-/border-b border-black/20 py-[clamp(5px,1vw,10px)]"
     aria-label="Main navigation"
   >
     <a href="/" class="flex items-center" aria-label="Home">
       <Image
         src={logo}
         alt="Back to homepage"
-        width={150}
+        width={300}
         height={150}
         loading="eager"
-        class="w-[50px] cursor-pointer object-contain transition-transform duration-200 ease-in-out hover:scale-110"
+        class="w-[200px] cursor-pointer object-contain transition-transform duration-200 ease-in-out hover:scale-110"
       />
     </a>
 <!-- Boton de carrito de compra-->
@@ -39,7 +39,7 @@ import cart from "../../../public/assets/checkout/cart.png"
         width={150}
         height={150}
         loading="eager"
-        class="w-[50px] cursor-pointer object-contain transition-transform duration-200 ease-in-out hover:scale-110"
+        class=" w-[50px] cursor-pointer object-contain transition-transform duration-200 ease-in-out hover:scale-110 "
       />
           <span
             id="cart-badge"
@@ -155,7 +155,7 @@ import cart from "../../../public/assets/checkout/cart.png"
   }
 
   .cart-item {
-    @apply flex justify-between items-center w-full py-4 border-b border-gray-100 animate-[fadeIn_0.3s_ease] gap-3;
+    @apply flex justify-between items-center w-full py-4 border-b border-gray-100 animate-[fadeIn_0.3s_ease] gap-3 ;
   }
 
   .cart-item:last-child {
@@ -163,7 +163,7 @@ import cart from "../../../public/assets/checkout/cart.png"
   }
 
   .cart-item-info {
-    @apply flex gap-4 items-center flex-1 min-w-0;
+    @apply flex gap-4 items-center flex-1 min-w-0 ;
   }
 
   .cart-item-image {
@@ -171,7 +171,7 @@ import cart from "../../../public/assets/checkout/cart.png"
   }
 
   .cart-item-details {
-    @apply flex flex-col gap-1 flex-1 min-w-0;
+    @apply flex flex-col gap-1 flex-1 min-w-0 ;
   }
 
   .cart-item-name {
@@ -187,18 +187,18 @@ import cart from "../../../public/assets/checkout/cart.png"
   }
 
   .counter-wrapper {
-    @apply flex text-sm gap-10 bg-gray-100 py-2 px-3 rounded items-center;
+    @apply flex text-sm gap-10 bg-gray-100 py-2 px-3 rounded items-center ;
   }
   .cart-wrapper {
-    @apply flex text-sm gap-4 bg-gray-100 py-2 px-3 rounded;
+    @apply flex text-sm gap-4 bg-gray-100 py-2 px-3 rounded ;
   }
 
   .counter-btn {
-    @apply bg-transparent border-0 cursor-pointer text-sm text-black/50 px-1 transition-colors font-bold select-none hover:text-[#d87d4a] disabled:opacity-30 disabled:cursor-not-allowed;
+    @apply flex bg-transparent border-0 cursor-pointer text-xl text-black/50 px-1 py-1 transition-colors font-bold select-none hover:text-[#d87d4a] disabled:opacity-30 disabled:cursor-not-allowed;
   }
 
   .counter-value {
-    @apply min-w-[20px] text-center font-bold text-[50px];
+    @apply min-w-[20px] text-center font-bold text-[16px];
   }
 
   .remove-item-btn {
